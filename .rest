@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:3001/api
+
+# index request
+GET {{baseUrl}}/index?page=1
+
+###
+# add product request
+POST {{baseUrl}}/store/add
+content-type: application/json
+
+{
+  "title":"Angular",
+  "description":"Angular product",
+  "url":"https://angular.io/"
+}
+
+###
+# show one product
+GET {{baseUrl}}/5f9ed6eea6a86e27d4f9f0b4
+
+###
+#update one product
+PUT {{baseUrl}}/update/5f9ed6eea6a86e27d4f9f0b4
+content-type: application/json
+
+{
+  "title":"AngularJS",
+  "description":"AngularJS product",
+  "url":"https://angularjs.org/"
+}
+
+
+###
+#delete one product
+
+DELETE {{baseUrl}}/destroy/5f9ed6eea6a86e27d4f9f0b4
